@@ -26,26 +26,26 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'AliPay' do |alipay|
-    alipay.vendored_libraries = 'lib/Channels/AliPay/*.a'
-    alipay.source_files = 'lib/Channels/AliPay/*.{h,m}'
-    alipay.ios.vendored_frameworks = 'lib/Channels/AliPay/AlipaySDK.framework'
-    alipay.resource = 'lib/Channels/AliPay/AlipaySDK.bundle'
+    alipay.vendored_libraries = 'lib/AliPay/*.a'
+    alipay.source_files = 'lib/AliPay/*.{h,m}'
+    alipay.ios.vendored_frameworks = 'lib/AliPay/AlipaySDK.framework'
+    alipay.resource = 'lib/AliPay/AlipaySDK.bundle'
     alipay.dependency 'XPay/Base'
   end
 
   s.subspec 'WxPay' do |wx|
-    wx.vendored_libraries = 'lib/Channels/WxPay/*.a'
-    wx.source_files = 'lib/Channels/WxPay/*.{h,m}'
-    wx.public_header_files = 'lib/Channels/WxPay/*.h'
-    wx.source_files = 'lib/Channels/WxPay/*.h'
+    wx.vendored_libraries = 'lib/WxPay/*.a'
+    wx.source_files = 'lib/WxPay/*.{h,m}'
+    wx.public_header_files = 'lib/WxPay/*.h'
+    wx.source_files = 'lib/WxPay/*.h'
     wx.ios.library = 'sqlite3'
     wx.dependency 'XPay/Base'
   end
 
   s.subspec 'UnionPay' do |unionpay|
-    unionpay.vendored_libraries = 'lib/Channels/UnionPay/*.a'
-    unionpay.source_files = 'lib/Channels/UnionPay/*.{h,m}'
-    unionpay.public_header_files = 'lib/Channels/UnionPay/*.h'
+    unionpay.vendored_libraries = 'lib/UnionPay/*.a'
+    unionpay.source_files = 'lib/UnionPay/*.{h,m}'
+    unionpay.public_header_files = 'lib/UnionPay/*.h'
     unionpay.source_files = 'lib/Channels/UnionPay/*.h'
     unionpay.dependency 'XPay/Base'
   end
