@@ -17,10 +17,6 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'Base', 'AliPay', 'WxPay','UnionPay'
   s.xcconfig = { 'OTHER_LDFLAGS' => '-lObjC','ENABLE_BITCODE' => 'NO'}
 
-
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
-
   s.subspec 'Base' do |base|
     base.source_files = 'lib/*.{h,m}'
     base.public_header_files = 'lib/*.h'
@@ -31,27 +27,27 @@ Pod::Spec.new do |s|
 
   s.subspec 'AliPay' do |alipay|
     alipay.vendored_libraries = 'lib/Channels/AliPay/*.a'
-    alipay.source_files = 'lib/Channels/AliPay//*.{h,m}'
+    alipay.source_files = 'lib/Channels/AliPay/*.{h,m}'
     alipay.ios.vendored_frameworks = 'lib/Channels/AliPay/AlipaySDK.framework'
     alipay.resource = 'lib/Channels/AliPay/AlipaySDK.bundle'
-    alipay.dependency 'VPay/Base'
+    alipay.dependency 'XPay/Base'
   end
 
   s.subspec 'WxPay' do |wx|
     wx.vendored_libraries = 'lib/Channels/WxPay/*.a'
-    wx.source_files = 'lib/Channels/WxPay//*.{h,m}'
+    wx.source_files = 'lib/Channels/WxPay/*.{h,m}'
     wx.public_header_files = 'lib/Channels/WxPay/*.h'
     wx.source_files = 'lib/Channels/WxPay/*.h'
     wx.ios.library = 'sqlite3'
-    wx.dependency 'VPay/Base'
+    wx.dependency 'XPay/Base'
   end
 
   s.subspec 'UnionPay' do |unionpay|
     unionpay.vendored_libraries = 'lib/Channels/UnionPay/*.a'
-    unionpay.source_files = 'lib/Channels/UnionPay//*.{h,m}'
+    unionpay.source_files = 'lib/Channels/UnionPay/*.{h,m}'
     unionpay.public_header_files = 'lib/Channels/UnionPay/*.h'
     unionpay.source_files = 'lib/Channels/UnionPay/*.h'
-    unionpay.dependency 'VPay/Base'
+    unionpay.dependency 'XPay/Base'
   end
 
 end
